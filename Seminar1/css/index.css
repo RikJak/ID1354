@@ -1,0 +1,28 @@
+	#outer{
+  background-color: #000000;
+  position: absolute;
+  z-index: 2;
+  opacity: 0.1;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+	}
+
+	#inner{
+  display: grid;
+  justify-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-rows: 1fr 3fr 1fr 2fr 1fr;
+	}
+
+	
+	input[type=button]{
+		background-color: green;
+	    background-position: 10px 10px;
+	    background-repeat: no-repeat;
+
+	    padding-left: 40px;
+	}
