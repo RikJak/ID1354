@@ -26,3 +26,5 @@ li a:hover:not(.active){
 	background-color: #555;
 	color: white;
 }
+
+@media only screen and (max-width: 

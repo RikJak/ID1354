@@ -3,23 +3,66 @@
 <head>
 	<meta charset = "utf-8">
 	<title>World Wide Wastrels</title>
+	<link rel="shortcut icon" type="image/png" href="bin/favicon.png"/>
 	<link rel="stylesheet" type="text/css" href = "css/reset.css">
-	<link rel="stylesheet" type="text/css" href = "css/index.css">
-			<link rel="stylesheet" type="text/css" href = "css/menu.css">
+	<link rel="stylesheet" type="text/css" href = "css/menu.css">
+	<link rel="stylesheet" type="text/css" href = "css/general.css">
+	<link rel="stylesheet" type="text/css" href = "css/calendar.css">
 </head>
 
 <body>
-<div id = "menu">
-	<ul class = "menuList">
-	<li><a href="index.html">Index</a></li>
-	<li><a class="active" href="calendar.html">Calendar</a></li>
-	<li><a href="meatballs.html">Meatballs</a></li>
-	<li><a href="pancakes.html">Pancakes</a></li>
-	</ul>
-</div>
-	<div id = "inner">
-		<form method ="post" action "index.html">
-			<button id = "toCalendar">Calendar</button>
-		</form>
+	<div id = "menu">
+		<ul class = "menuList">
+			<li><a href="index.html">Index</a></li>
+			<li><a class="active" href="calendar.html">Calendar</a></li>
+			<li><a href="meatballs.html">Meatballs</a></li>
+			<li><a href="pancakes.html">Pancakes</a></li>
+		</ul>
+	</div>
+	<div id = "title">
+		<p>Food calendar!</p>
+	</div>
+	<div id = "grid">
+		<ul id="weekdays">
+			<li>Monday</li>
+			<li>Tuesday</li>
+			<li>Wednesday</li>
+			<li>Thursday</li>
+			<li>Friday</li>
+			<li class = "weekend">Saturday</li>
+			<li class = "weekend">Sunday</li>
+		</ul>
+		<div id  = "calendar">
+			<a class = "day" >	1	</a>
+			<a class = "day" >	2	</a>
+			<a class = "day" >	3	</a>
+			<a class = "day" >	4	</a>
+			<a class = "day" >	5	</a>
+			<a class = "day" >	6	</a>
+			<a class = "day" >	7	</a>
+			<a class = "day" >	8	</a>
+			<a class = "day" >	9	</a>
+			<a class = "day" >	10	</a>
+			<a class = "day" >	11	</a>
+			<a class = "day" >	12	</a>
+			<a class = "day" >	13	</a>
+			<a class = "day" >	14	</a>
+			<a class = "day" >	15	</a>
+			<a class = "day" >	16	</a>
+			<a class = "day" >	17	</a>
+			<a class = "day" >	18	</a>
+			<a class = "day" >	19	</a>
+			<a class = "day" >	20	</a>
+			<a class = "day" href="pancakes.html">	21	<img src ="bin/pancakes.png"></a>
+			<a class = "day" >	22	</a>
+			<a class = "day" >	23	</a>
+			<a class = "day" >	24	</a>
+			<a class = "day" >	25	</a>
+			<a class = "day" >	26	</a>
+			<a class = "day" >	27	</a>
+			<a class = "day" href="meatballs.html">	28	<img src ="bin/meatballs.png"></a>
+			<a class = "day" >	29	</a>
+			<a class = "day" >	30	</a>
+		</div>
 	</div>
 </body>
