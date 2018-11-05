@@ -1,7 +1,6 @@
 div.comment{
 
 }
-#grid{
 	#grid {
 	display: grid;
 	justify-items: center;
@@ -10,4 +9,17 @@ div.comment{
 	grid-template-columns: 2fr 6fr 2fr;
 	grid-template-rows: 2fr 0.5fr 7fr 2fr;
 }
+
+div.ingredients{
+	background-color:white;
+	text-color:black;
+}
+
+div.method{
+	background-color:black;
+	color:white;
+}
+
+div.image{
+§
 }
