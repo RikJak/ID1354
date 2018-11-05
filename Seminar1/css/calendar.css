@@ -3,18 +3,22 @@ a{
 }
 
 #title{
-	position: relative;
+	position: center;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden; 
+	text-align: center;
+	height: 11wh;
+}
+#title>h1{
+		font-size: 5vw;
 }
 
 #grid {
 	display: grid;
 	justify-items: center;
-	grid-column: 2 / 3;
-	grid-row: 1 / 5;
+
 	grid-template-columns: 2fr 6fr 2fr;
 	grid-template-rows: 2fr 0.5fr 7fr 2fr;
 }
@@ -66,26 +70,23 @@ li.weekend{
 	overflow:hidden;
 }
 img{
-		max-width: 100%;
+	max-width: 100%;
 	max-height: 100%;
+	position: fill;
 }
 
 @media only screen and (max-width: 320px) {
-	#header {
-		grid-template-rows: 1fr 2fr 1fr;
-	}
-	#header > h1 {
-		font-size: 10vw;
-	}
-	#inner_grid {
-		grid-template-columns: 2fr 6fr 2fr;
-		grid-template-rows: 1.5fr 0.5fr 4fr 5fr;
-	}
+	
 	.day {
 		height: 5vh;
 	}
 	#weekdays > li {
 		padding-top: 30%;
-		font-size: 2vw;
+		font-size: 0vw;
 	}
+
+	.calendar{
+		grid-template-comuln:;
+	}
+
 }

@@ -1,11 +1,45 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.container{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 3;
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 3fr 6fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#promo{
+  grid-column:1/4;
+  grid-row:1;
+  text-align: center;
+  background-image: url("/ID1354/Seminar1/bin/background.jpg");
+    background-repeat: repeat;
+    background-size: contain;
+
+}
+
+
+#promo>h1{
+    font-size: 5vw;
+    color: pink;
+}
 #calendarButton{
   text-align: center;
-  height: 100vh;
-  width: 100vh;
-  display:flex;
   align-items: center;
   justify-content: center;
+  grid-column:2;
+  grid-row:2;
 }
+
+
 
 .button {
     
@@ -27,4 +61,19 @@
 .button:hover{
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+#delicious{
+    grid-column:1/4;
+  grid-row:3;
+  text-align: center;
+  background-image: url("/ID1354/Seminar1/bin/delicious.jpg");
+    background-repeat: repeat;
+    background-size: contain;
 
+}
+}
+#sneaky{
+  font-size: 10px;
+  color: #aa1e4f;
+  grid-row:3;
+  grid-column:3;
+}

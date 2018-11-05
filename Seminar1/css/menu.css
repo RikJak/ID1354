@@ -13,7 +13,7 @@ ul.menuList>li {
 
 ul.menuList>li a {
     display: block;
-	text-align:center;
+    text-align:center;
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
@@ -28,9 +28,10 @@ ul.menuList>li a:hover:not(.active){
 	color: white;
 }
 
-@media screen and (max-width: 480){
-ul.menuList>li {
-    float: none;
-}
+@media screen and (max-width: 480px){
+
+    ul.menuList>li {
+        float: none;
+    }
 
 }
