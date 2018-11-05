@@ -2,18 +2,6 @@ a{
 	text-decoration: none;
 }
 
-#title{
-	position: center;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden; 
-	text-align: center;
-	height: 11wh;
-}
-#title>h1{
-		font-size: 5vw;
-}
 
 #grid {
 	display: grid;
@@ -52,7 +40,7 @@ li.weekend{
 }
 .day {
 	text-align: center;
-	content: center;
+	align-content: center;
 	height: 11vh;
 	width: 8vw;
 	color: white;
@@ -72,7 +60,7 @@ li.weekend{
 img{
 	max-width: 100%;
 	max-height: 100%;
-	position: fill;
+
 }
 
 @media only screen and (max-width: 320px) {
@@ -83,10 +71,6 @@ img{
 	#weekdays > li {
 		padding-top: 30%;
 		font-size: 0vw;
-	}
-
-	.calendar{
-		grid-template-comuln:;
 	}
 
 }
