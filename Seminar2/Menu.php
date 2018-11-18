@@ -9,7 +9,7 @@ session_start();
 				<li><a href="pancakes.php">Pancakes</a></li>
 
                 <?php if(array_key_exists('username', $_SESSION)){
-                    echo '<li id = "log"><a href="LogOut.php">'.$_SESSION['username'].'</a></li>';
+                    echo '<li id = "log"><a href="MyPage.php">' .$_SESSION['username'].'</a></li>';
                 }else{
                     echo '<li id = "log"><a class= "logIn" href="logIn.php">Log in</a></li>';
                 }?>

@@ -40,17 +40,20 @@
 				
 			</div>
 		</div>
-		<div class="comments">
-			<ul class ="listOfComments">
-				<li class="comment">
-					<p>This is amazing!! 5 stars!</p>
-				</li>
-				<li class="comment">
-					<p>This is aweful!! 0 stars!</p>
-				</li>
-				<li class="comment">
-					<p>This is amazing, but needs more butter!! -7 stars!</p>
-				</li>
-			</ul>
-		</div>
+    <div class="commentField">
+        <form action="PostComments.php" method="post">
+            <textarea name="comment" rows="10" cols="28" placeholder="Enter comment!"></textarea>
+            <input id="recipeId" name="recipeID" type="hidden" value="pancakes">
+            <br>
+            <?php if(isset($_SESSION['username'])){
+                echo '<button type="submit">Submit</button>';
+            }?>
+        </form>
+
+    </div>
+    <div class ="comments">
+        <ul class ="listOfComments">
+            <?php include 'PrintComment.php'?>
+        </ul>
+    </div>
 	</body>

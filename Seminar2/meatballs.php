@@ -41,17 +41,20 @@
 			</div>
 
 		</div>
+        <div class="commentField">
+            <form action="PostComments.php" method="post">
+                <textarea name="comment" rows="10" cols="28" placeholder="Enter comment!"></textarea>
+                <input id="recipeId" name="recipeID" type="hidden" value="meatballs">
+                <br>
+                <?php if(isset($_SESSION['username'])){
+                echo '<button type="submit">Submit</button>';
+                }?>
+            </form>
+
+        </div>
 					<div class ="comments">
 				<ul class ="listOfComments">
-					<li class="comment">
-						<p>This is amazing!! 5 stars!</p>
-					</li>
-					<li class="comment">
-						<p>This is aweful!! 0 stars!</p>
-					</li>
-					<li class="comment">
-						<p>This is amazing, but needs butter!! 5 stars!</p>
-					</li>
+                    <?php include 'PrintComment.php'?>
 				</ul>
 			</div>
 	</body>
