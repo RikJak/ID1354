@@ -53,7 +53,8 @@
     </div>
     <div class ="comments">
         <ul class ="listOfComments">
-            <?php include 'PrintComment.php'?>
+            <?php include 'PrintComment.php';
+            printComments('pancakes')?>
         </ul>
     </div>
 	</body>

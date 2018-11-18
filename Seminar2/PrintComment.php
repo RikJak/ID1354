@@ -6,7 +6,7 @@
  * Time: 15:28
  */
 
-function printComments(recipe){
+function printComments($recipe){
 $servername = "localhost:3306";
 $username = "root";
 $password = "Rikard";
@@ -16,7 +16,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $sql = $conn->prepare("SELECT * FROM comments");
+    $sql = $conn->prepare("SELECT * FROM comments WHERE Topic = '$recipe'");
     $sql->execute();
     $comments = $sql->fetchAll();
 
@@ -24,11 +24,12 @@ try {
         echo '<li class="comment">';
         echo $comment['Username'].":";
         echo $comment['Comment'];
+        if(isset($_SESSION['username'])){
         if($comment['Username']==$_SESSION['username']){
             echo '<form action = "DeleteComment.php" method="post">';
             echo '<input name="CommentID" type="hidden" value="'.$comment['CommentID'].'">';
             echo '<button type="submit">Delete</button>';
-        }
+        }}
         echo "</li>";
     }
 
