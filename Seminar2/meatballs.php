@@ -10,15 +10,7 @@
 		<link rel="stylesheet" type="text/css" href = "css/recipe.css">
 	</head>
 	<body>
-		<div id = "menu">
-			<ul class = "menuList">
-				<li><a href="index.html">Index</a></li>
-				<li><a href="calendar.html">Calendar</a></li>
-				<li><a class = "active" href="meatballs.html">Meatballs</a></li>
-				<li><a href="pancakes.html">Pancakes</a></li>
-			</ul>
-		</div>
-
+    <?php include 'Menu.php';?>
 	<div id = "title">
 		<h1>Meatballs!</h1>
 	</div>

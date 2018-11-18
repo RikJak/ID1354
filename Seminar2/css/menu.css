@@ -18,6 +18,13 @@ ul.menuList>li a {
     text-decoration: none;
 }
 
+ul.menuList>#log{
+	float:	right;
+}
+ul.menuList>#log a{
+	background-color:#681433;
+	color:white;
+}
 ul.menuList>li a.active{
 	background-color: #681433; 
 	color: white;
@@ -27,10 +34,15 @@ ul.menuList>li a:hover:not(.active){
 	color: white;
 }
 
+
 @media screen and (max-width: 480px){
 
     ul.menuList>li {
         float: none;
     }
+	
+	ul.menuList>#log{
+	float:	none;
+}
 
 }

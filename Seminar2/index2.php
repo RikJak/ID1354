@@ -20,7 +20,7 @@
 
 			</div>
 			<div id = "calendarButton">
-				<button class="button" onclick="location.href='calendar.html'" >Go to calendar</button>
+				<button class="button" onclick="location.href='calendar.php'" >Go to calendar</button>
 			</div>
 			<div id = "delicious">
 			</div>
