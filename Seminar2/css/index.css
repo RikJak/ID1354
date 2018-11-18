@@ -47,7 +47,7 @@ html, body {
 
 
 .button {
- 
+  width:auto;
   border: none;
   color: white;
   padding: 15px 32px;

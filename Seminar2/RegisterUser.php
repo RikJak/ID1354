@@ -5,12 +5,16 @@
  * Date: 2018-11-17
  * Time: 12:43
  */
+
+session_start();
 $servername = "localhost:3306";
 $username = "root";
 $password = "Rikard";
 $userPass = $_POST['psw'];
 $userName = $_POST['uname'];
 $match = false;
+$_SESSION['creationSuccess']=false;
+
 try {
     try {
         $conn = new PDO("mysql:host=$servername;dbname=mydb", $username, $password);
@@ -21,11 +25,14 @@ try {
     VALUES ('$userName', '$userPass')";
         // use exec() because no results are returned
         $conn->exec($sql);
-        echo "New record created successfully";
+
+        $_SESSION['creationSuccess']=true;
+        $_SESSION['username']= $userName;
+        header("Location: MyPage.php");
     }
     catch(PDOException $e)
     {
-        echo $sql . "<br>" . $e->getMessage();
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
 

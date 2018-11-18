@@ -23,6 +23,7 @@ try {
     foreach ($comments as $comment){
         echo '<li class="comment">';
         echo $comment['Username'].":";
+        echo '<br>';
         echo $comment['Comment'];
         if(isset($_SESSION['username'])){
         if($comment['Username']==$_SESSION['username']){

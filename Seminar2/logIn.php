@@ -41,5 +41,25 @@
         </div>
     </form>
 
+    <?php
+    if (isset($_SESSION['validLogIn'])){
+        if(!$_SESSION['validLogIn']){
+            echo'    <div class = "error">
+        <div class="errorText">
+            You\'ve entered the wrong username or password.
+        </div>
+    </div>
+    
+    <script type="text/javascript">
 
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>';
+
+            unset($_SESSION['validLogIn']);
+        }
+    }
+
+    ?>
 </body>

@@ -13,7 +13,7 @@ $username = "root";
 $password = "Rikard";
 $userPass = (string)$_POST['psw'];
 $userName = $_POST['uname'];
-$match = false;
+$_SESSION['validLogIn'] = false;
 try {
     $conn = new PDO("mysql:host=$servername;dbname=mydb", $username, $password);
     // set the PDO error mode to exception
@@ -28,15 +28,15 @@ try {
     foreach(new RecursiveArrayIterator($sql->fetchAll()) as $k=>$v) {
         foreach ($v as $key=>$value){
             if($value==$userPass){
-                $match = true;
+                $_SESSION['validLogIn'] = true;
                 $_SESSION['username']=$userName;
             }
         }
 
     }
 
-    if($match){
-        header("Location: index.php");
+    if($_SESSION['validLogIn']){
+        header("Location: MyPage.php");
     }else{
         header("Location: logIn.php");
     }

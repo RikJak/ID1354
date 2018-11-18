@@ -12,10 +12,15 @@
 
 <body>
 <?php include 'Menu.php'?>
-
-<h2>Hello <?php $_SESSION['username']?>!</h2>
-<div id = "calendarButton">
-				<button class="button" onclick="location.href='ClearLoggedInUser.php'">Log out!</button>
- </div>
-
+<?php if(isset($_SESSION['creationSuccess'])){
+    echo '<h2>You have succefully created an account, '.$_SESSION['username'].'!</h2>';
+    unset($_SESSION['creationSuccess']);
+}else{
+    echo '<h2>Welcome back '.$_SESSION['username'].'!</h2>
+<div class="container">
+    <div id = "LogOutButton">
+        <button class="button" onclick='."location.href='ClearLoggedInUser.php'".'>Log out!</button>
+    </div>
+</div>';
+}?>
 </body>
