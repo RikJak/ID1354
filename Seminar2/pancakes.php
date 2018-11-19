@@ -11,29 +11,30 @@
 	</head>
 	<body>
     <?php include 'Menu.php';?>
+    <?php $xml = simplexml_load_file('xml/cookbook.xml');?>
 			<div id = "title">
-		<h1>Pancakes!</h1>
+		<h1><?php echo $xml->recipe[1]->title;?></h1>
 	</div>
 		<div class ="recipe">
 			<div class="image">
-				<img src ="bin/pancakes.png" alt = "Pancakes covered in ketchup, my favorite!">
+				<img src ="<?php echo $xml->recipe[1]->imagepath;?>" alt = "Pancakes covered in ketchup, my favorite!">
 			</div>
 			
 			<div class ="ingredients">
 				<h2>Ingredients:</h2>
 				<ul class = "listOfIngredients">
-					<li>1 egg</li>
-					<li>1 unit of flour</li>
-					<li>1 unit of sugar</li>
-					<li>1 kg butter</li>
+                    <?php foreach($xml->recipe[1]->ingredient->children() as $ingredient){
+                        echo "<li>".$ingredient."</li>";
+                    }?>
 				</ul>
 			</div>
 			
 			<div class = "method">
 				<h2>Method:</h2>
 				<ul class="steps">
-					<li><p>1. In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth. </p></li>
-					<li><p>2. Heat a lightly oiled griddle or frying pan over medium high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot. </p></li>
+                    <?php foreach($xml->recipe[1]->recipetext->children() as $step){
+                        echo "<li><p>".$step."</p></li>";
+                    }?>
 				</ul>
 			</div>
 			<div class ="comments">
