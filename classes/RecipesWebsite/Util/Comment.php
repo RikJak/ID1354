@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Rikard
+ * UserDTO: Rikard
  * Date: 2018-11-30
  * Time: 16:23
  */

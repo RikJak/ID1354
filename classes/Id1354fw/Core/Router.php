@@ -103,6 +103,7 @@ class Router {
             $defaultHandlerClassName = '\\' . $loader->loadDefaultHandler();
             return new $defaultHandlerClassName();
         } catch (ClassNotFoundException $cnfe) {
+            echo "DFGHdfghjedfghbujidfghbuioeeyhbuioyhbuioergyhbuioer";
             $errorHandler = new ErrorHandler();
             $errorHandler->noRequestHandlerFound();
             return NULL;

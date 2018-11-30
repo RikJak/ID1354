@@ -4,10 +4,6 @@ Options All -Indexes
 	deny from all
 </FilesMatch>
 
-<Directory "/htdocs/*/classes">
-	Order allow,deny
-	Deny from all
-</Directory>
 
 <IfModule mod_rewrite.c>
 	RewriteEngine on

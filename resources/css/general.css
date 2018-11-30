@@ -1,0 +1,34 @@
+
+body{
+	background-color: #aa1e4f;
+} 
+#title{
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden; 
+	text-align: center;
+	height: 11vh;
+}
+#title>h1{
+		font-size: 5vw;
+}
+
+button{
+	background-color: #123456;
+}
+
+button {
+	align:center;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}
+
+button:hover {
+    opacity: 0.8;
+}

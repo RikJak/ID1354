@@ -1,13 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Rikard
+ * UserDTO: Rikard
  * Date: 2018-11-30
  * Time: 15:47
  */
 
 namespace RecipesWebsite\Integration;
 use RecipesWebsite\Util\Comment;
+use RecipesWebsite\Util\UserDTO;
 
 class ServerAccess
 {
@@ -18,10 +19,15 @@ private $dbname = "mydb";
 
 private function openConnection(){
     try{
-            $conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
+        /*    $conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
             // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);*/
 
+        $conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
+// Check connection
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
         return $conn;
         }
 
@@ -32,20 +38,35 @@ private function openConnection(){
 
 }
 
-public function getUser($userName,$passWord){
-    $conn = $this->openConnection();
-    $sql = $conn->prepare("SELECT Username,Password FROM users WHERE Username = '$userName' AND Password = '$passWord'");
+public function getUser($userName){
+   /* $conn = $this->openConnection();
+    $sql = $conn->prepare("SELECT Username,Password FROM users WHERE Username = '$userName'");
     $sql->execute();
-    $result =$sql->setFetchMode(PDO::FETCH_ASSOC);
+    $result =$sql->setFetchMode(PDO::FETCH_ASSOC);*/
 
-    return $result;
+   $sql = "SELECT Username,Password FROM users WHERE Username = '$userName'";
+
+
+    return new UserDTO($result['Username'],$result['Password']);
 }
 
-public function setUser($userName,$userPass){
+public function setUser(UserDTO $user){
+
+    $userName = $user->getUsername();
+    $userPass = $user->getPassword();
+
     $conn = $this->openConnection();
     $sql = "INSERT INTO users(Username, Password)
     VALUES ('$userName', '$userPass')";
-    $conn->exec($sql);
+
+    if (mysqli_query($conn, $sql)) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+    //$conn->exec($sql);
 }
 
 public function getComment($recipe){
