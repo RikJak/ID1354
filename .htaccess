@@ -1,0 +1,20 @@
+Options All -Indexes
+
+<FilesMatch "(config|.+\.html)\.php">
+	deny from all
+</FilesMatch>
+
+<Directory "/htdocs/*/classes">
+	Order allow,deny
+	Deny from all
+</Directory>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	RewriteCond %{REQUEST_URI} !\.(bmp|cgi|css|flv|gif|ico|jpe?g|js|png|html|php|swf|xml)$
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+	RewriteRule (.*) index.php [L,QSA]
+</IfModule>
