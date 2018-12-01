@@ -3,11 +3,11 @@
 <head>
 	<meta charset = "utf-8">
 	<title>Tasty Recipes!</title>
-	<link rel="shortcut icon" type="image/png" href="bin/favicon.png"/>
-	<link rel="stylesheet" type="text/css" href = "css/reset.css">
-	<link rel="stylesheet" type="text/css" href = "css/menu.css">
-	<link rel="stylesheet" type="text/css" href = "css/general.css">
-	<link rel="stylesheet" type="text/css" href = "css/calendar.css">
+	<link rel="shortcut icon" type="image/png" href="../resources/bin/favicon.png"/>
+	<link rel="stylesheet" type="text/css" href = "../resources/css/reset.css">
+	<link rel="stylesheet" type="text/css" href = "../resources/css/menu.css">
+	<link rel="stylesheet" type="text/css" href = "../resources/css/general.css">
+	<link rel="stylesheet" type="text/css" href = "../resources/css/calendar.css">
 </head>
 
 <body>
@@ -46,14 +46,14 @@
 			<a class = "day" >	18	</a>
 			<a class = "day" >	19	</a>
 			<a class = "day" >	20	</a>
-			<a class = "day" href="pancakes.php">	21	<div class = "imgContainer"><img src ="bin/pancakes.png" alt="An image of some pancakes covered in ketchup"></div></a>
+			<a class = "day" href="pancakes.php">	21	<div class = "imgContainer"><img src ="../resources/bin/pancakes.png" alt="An image of some pancakes covered in ketchup"></div></a>
 			<a class = "day" >	22	</a>
 			<a class = "day" >	23	</a>
 			<a class = "day" >	24	</a>
 			<a class = "day" >	25	</a>
 			<a class = "day" >	26	</a>
 			<a class = "day" >	27	</a>
-			<a class = "day" href="meatballs.php">	28	<div class = "imgContainer"><img src ="bin/meatballs.png" alt="An image of some tasty looking meatballs"></div></a>
+			<a class = "day" href="meatballs.php">	28	<div class = "imgContainer"><img src ="../resources/bin/meatballs.png" alt="An image of some tasty looking meatballs"></div></a>
 			<a class = "day" >	29	</a>
 			<a class = "day" >	30	</a>
 		</div>

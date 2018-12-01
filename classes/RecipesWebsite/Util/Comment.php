@@ -11,11 +11,13 @@ class Comment{
     private $message;
     private $commentID;
     private $deleted;
-    public function __construct($username,$message,$commentID){
+    private $recipeID;
+    public function __construct($username,$message,$commentID,$recipeID){
         $this->username = $username;
         $this->message = $message;
         $this->commentID = $commentID;
         $this->deleted = false;
+        $this->recipeID = $recipeID;
     }
     public function getUsername(){
         return $this->username;
@@ -38,5 +40,10 @@ class Comment{
     }
     public function setCommentID($commentID){
         $this->commentID=$commentID;
+    }
+
+    public function getRecipeID()
+    {
+        return $this->recipeID;
     }
 }

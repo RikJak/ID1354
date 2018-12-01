@@ -15,25 +15,31 @@ use RecipesWebsite\Util\Constants;
 class Login extends AbstractRequestHandler{
     private $username;
     private $password;
-    public function setUsername(){
-        return $this->username;
+    public function setUsername($username){
+        $this->username = $username;
     }
-    public function setPassword(){
-        return $this->password;
+    public function setPassword($password){
+        $this->password = $password;
     }
     protected function doExecute()
     {
         $this->session->restart();
+        //$this->session->invalidate();
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
-        if($contr->login($_POST['username'], $_POST['password'])) {
-            $this->addVariable(Constants::TASTY_USERNAME_VAR, $contr->getUsername());
+        if($contr->logIn($this->username,$this->password )) {
+
+            $this->session->set(Constants::TASTY_USERNAME_VAR, $contr->getUsername());
             $this->session->set(Constants::TASTY_ISLOGGEDIN, true);
             $this->addVariable(Constants::TASTY_ISLOGGEDIN, true);
             $this->session->set(Constants::TASTY_CONTR_KEY,$contr);
-            echo "You have successfully logged in!";
-            return Constants::TASTY_LOGIN_VIEW;
+            $this->session->set(Constants::TASTY_USERNAME_VAR,$this->username);
+            $this->addVariable(Constants::TASTY_USERNAME_VAR,$this->username);
+
+            echo $this->session->get(Constants::TASTY_USERNAME_VAR);
+            echo $this->session->get(Constants::TASTY_ISLOGGEDIN);
+            return Constants::TASTY_FRONT_PAGE;
         }
         echo "Only characters and numbers in username!";
-        return Constants::TASTY_SIGNUPP_VIEW;
+        return Constants::TASTY_LOGIN_VIEW;
     }
 }

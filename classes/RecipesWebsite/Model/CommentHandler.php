@@ -22,7 +22,7 @@ class CommentHandler
     }
 
     public function postComment(Comment $comment){
-        $comment->setMessage(htmlentities($comment, ENT_QUOTES));
+        $comment->setMessage(htmlentities($comment->getMessage(), ENT_QUOTES));
 
         if($this->dbHandler->addComment($comment)){
             return true;
@@ -32,6 +32,10 @@ class CommentHandler
     }
 
     public function getComments($page){
-        $this->dbHandler->getComment($page);
+        return $this->dbHandler->getComment($page);
+    }
+
+    public function removeComment($commentID){
+        $this->dbHandler->removeComment($commentID);
     }
 }

@@ -19,12 +19,8 @@ private $dbname = "mydb";
 
 private function openConnection(){
     try{
-        /*    $conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);*/
 
         $conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
-// Check connection
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
@@ -40,9 +36,6 @@ private function openConnection(){
 
 public function getUser($userName){
    $conn = $this->openConnection();
-    /*$sql = $conn->prepare("SELECT Username,Password FROM users WHERE Username = '$userName'");
-    $sql->execute();
-    $result =$sql->setFetchMode(PDO::FETCH_ASSOC);*/
 
     $sql = "SELECT Username,Password FROM users WHERE Username = '$userName'";
     $data = mysqli_query($conn, $sql);
@@ -62,65 +55,63 @@ public function setUser(UserDTO $user){
     VALUES ('$userName', '$userPass')";
 
     if (mysqli_query($conn, $sql)) {
-        //echo "New record created successfully";
         return true;
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
     mysqli_close($conn);
-    //$conn->exec($sql);
 }
 
 public function getComment($recipe){
 
     $conn = $this->openConnection();
-    $sql = $conn->prepare("SELECT * FROM comments WHERE Topic = '$recipe'");
-    $sql->execute();
-   // $comments = $sql->fetchAll();
-
+    $sql = "SELECT * FROM comments WHERE Topic = '$recipe'";
     $entries = null;
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($comment = mysqli_fetch_assoc($result)) {
-            $entry = new Comment($comment['Username'],$comment['Comment'],$comment['CommentID']);
+            $entry = new Comment($comment['Username'],$comment['Comment'],$comment['CommentID'],$comment['Topic']);
             $entries[] = $entry;
         }
     } else {
         //echo "0 results";
     }
-
-   /* foreach ($comments as $comment){
-        $entry = new Comment($comment['Username'],$comment['Comment'],$comment['CommentID']);
-        $entries[] = $entry;
-    }*/
-
     return $entries;
 
 
 }
 
-public function addComment(Comment $comment,$recipe){
+public function addComment(Comment $comment){
 
     $userName = $comment->getUsername();
     $message = $comment->getMessage();
+    $recipe = $comment->getRecipeID();
 
     $conn = $this->openConnection();
     $sql = "INSERT INTO comments(Username,Comment,Topic)
     VALUES ('$userName', '$message','$recipe')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        mysqli_close($conn);
         return true;
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        mysqli_close($conn);
         return false;
     }
 
+
+
+}
+
+public function removeComment($commentID){
+    $conn = $this->openConnection();
+    $sql = "DELETE FROM comments WHERE CommentID =$commentID";
+    mysqli_query($conn, $sql);
     mysqli_close($conn);
-    //$conn->exec($sql);
 }
 
 

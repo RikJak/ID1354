@@ -11,7 +11,7 @@
 	</head>
 	<body>
     <?php include 'Menu.php';?>
-    <?php $xml = simplexml_load_file('../resources/xml/cookbook.xml');?>
+    <?php $xml = simplexml_load_file('./resources/xml/cookbook.xml'); ?>
     <div id = "title">
         <h1><?php echo $xml->recipe[0]->title;?></h1>
     </div>
@@ -46,9 +46,9 @@
         <div class="commentField">
             <form action="PostComments" method="post">
                 <textarea name="comment" rows="10" cols="28" placeholder="Enter comment!"></textarea>
-                <input id="recipeId" name="recipeID" type="hidden" value="meatballs">
+                <input id="recipeID" name="recipeID" type="hidden" value="meatballs">
                 <br>
-                <?php if(isset($_SESSION['username'])){
+                <?php if($loggedin){
                 echo '<button type="submit">Submit</button>';
                 }?>
             </form>
@@ -58,17 +58,18 @@
 				<ul class ="listOfComments">
                     <?php
                     foreach ($entries as $entry) {
-                        echo("<p class='author'>" . $entry->getUsername() . ":</p>");
-                        echo("<p class='entry'>");
-                        echo(nl2br($entry->getMessage()));
-                        echo("</p>");
-                        if ($entry->getUsername() === $username) {
-                            echo("<form action='DeleteEntry' method='POST'>");
-                            echo("<input type='hidden' value='" .
-                                $entry->getCommentID() . "'/>");
-                            echo("<input type='submit' value='Delete'/>");
-                            echo("</form>");
-                        }
+
+                        echo '<li class="comment">';
+                        echo $entry->getUsername().":";
+                        echo '<br>';
+                        echo $entry->getMessage();
+                        if($loggedin){
+                            if($entry->getUsername() == $username){
+                                echo '<form action = "DeleteComment" method="post">';
+                                echo '<input name="CommentID" type="hidden" value="'.$entry->getCommentID().'">';
+                                echo '<button type="submit">Delete</button>';
+                            }}
+        echo "</li>";
                     }
                     ?>
 				</ul>

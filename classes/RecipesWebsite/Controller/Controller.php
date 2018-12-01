@@ -10,6 +10,7 @@ namespace RecipesWebsite\Controller;
 
 use RecipesWebsite\Model\userVerification;
 use RecipesWebsite\Model\CommentHandler;
+use RecipesWebsite\Util\Comment;
 
 class Controller{
     private $user;
@@ -37,7 +38,7 @@ class Controller{
     }
 
     public function postComments(Comment $message){
-        if($this->postComments($message)){
+        if($this->comments->postComment($message)){
             return true;
         }else{
             return false;
@@ -53,5 +54,13 @@ class Controller{
     public function getUsername()
     {
         return $this->username;
+    }
+
+    public function removeComment($commentID){
+        $this->comments->removeComment($commentID);
+    }
+
+    public function logout(){
+        $this->username = null;
     }
 }

@@ -23,10 +23,10 @@ class userVerification
 
     public function verifyUser($username,$password)
     {
-
         if (ctype_alnum($username) && ctype_alnum($password)) {
 
         $details = $this->dbHandler->getUser($username);
+
         if (password_verify($password, $details->getPassword())) {
             return true;
         }

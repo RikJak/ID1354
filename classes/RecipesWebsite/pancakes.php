@@ -11,7 +11,7 @@ use RecipesWebsite\Util\Constants;
 use RecipesWebsite\Controller\Controller;
 
 
-class meatballs extends AbstractRequestHandler {
+class pancakes extends AbstractRequestHandler {
 
     protected function doExecute() {
 
@@ -20,9 +20,9 @@ class meatballs extends AbstractRequestHandler {
         $this->addVariable(Constants::TASTY_USERNAME_VAR, $this->session->get(Constants::TASTY_USERNAME_VAR));//$this->session->get(Constants::TASTY_USERNAME_VAR));
 
         $this->addVariable(Constants::TASTY_ISLOGGEDIN, $this->session->get(Constants::TASTY_ISLOGGEDIN));
-        if($this->session->get(Constants::TASTY_MEATBALL_VIEW.'comments')==null) {
-            $this->session->set(Constants::TASTY_MEATBALL_VIEW . 'comments', $contr->getComments("meatballs"));
-    }
+        if($this->session->get(Constants::TASTY_PANCAKES_VIEW.'comments')==null) {
+            $this->session->set(Constants::TASTY_PANCAKES_VIEW . 'comments', $contr->getComments("pancakes"));
+        }
         $this->addVariable(Constants::TASTY_ENTRIES_VAR,$this->session->get(Constants::TASTY_MEATBALL_VIEW.'comments'));
 
 

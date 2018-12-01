@@ -12,11 +12,14 @@ class Constants{
     const TASTY_LOGINP_VIEW = 'loginP';
     const TASTY_SIGNUPP_VIEW = 'SignUp';
     const TASTY_MEATBALL_VIEW = 'meatballs';
+    const TASTY_PANCAKES_VIEW = 'pancakes';
     const CHAT_ENTRY_DELIMITER = ';\n';
     const TASTY_ISLOGGEDIN = 'loggedin';
     const TASTY_RECIPE= 'reciepeNumber';
     const TASTY_CALENDAR_VIEW= 'calendar';
-    const TASTY_FRONT_PAGE = "index";
+    const TASTY_FRONT_PAGE = 'index';
+    const TASTY_LAST_PAGE = 'last';
+    const TASTY_MY_PAGE = 'Mypage';
     public static function getViewFragmentsDir(){
         return $_SERVER['DOCUMENT_ROOT'] . Classes::getContextPath() . '/resourses/fragments/';
     }

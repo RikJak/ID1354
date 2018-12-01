@@ -11,7 +11,7 @@
 	</head>
 	<body>
     <?php include 'Menu.php';?>
-    <?php $xml = simplexml_load_file('xml/cookbook.xml');?>
+    <?php $xml = simplexml_load_file('./resources/xml/cookbook.xml');?>
 			<div id = "title">
 		<h1><?php echo $xml->recipe[1]->title;?></h1>
 	</div>
