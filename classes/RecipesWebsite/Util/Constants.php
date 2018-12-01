@@ -16,6 +16,7 @@ class Constants{
     const TASTY_ISLOGGEDIN = 'loggedin';
     const TASTY_RECIPE= 'reciepeNumber';
     const TASTY_CALENDAR_VIEW= 'calendar';
+    const TASTY_FRONT_PAGE = "index";
     public static function getViewFragmentsDir(){
         return $_SERVER['DOCUMENT_ROOT'] . Classes::getContextPath() . '/resourses/fragments/';
     }

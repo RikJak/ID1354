@@ -23,6 +23,10 @@ class Comment{
     public function getMessage(){
         return $this->message;
     }
+
+    public function setMessage($newMessage){
+        $this->message = $newMessage;
+    }
     public function getCommentID(){
         return $this->commentID;
     }

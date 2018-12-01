@@ -39,14 +39,16 @@ private function openConnection(){
 }
 
 public function getUser($userName){
-   /* $conn = $this->openConnection();
-    $sql = $conn->prepare("SELECT Username,Password FROM users WHERE Username = '$userName'");
+   $conn = $this->openConnection();
+    /*$sql = $conn->prepare("SELECT Username,Password FROM users WHERE Username = '$userName'");
     $sql->execute();
     $result =$sql->setFetchMode(PDO::FETCH_ASSOC);*/
 
-   $sql = "SELECT Username,Password FROM users WHERE Username = '$userName'";
+    $sql = "SELECT Username,Password FROM users WHERE Username = '$userName'";
+    $data = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($data);
 
-
+    mysqli_close($conn);
     return new UserDTO($result['Username'],$result['Password']);
 }
 
@@ -60,7 +62,8 @@ public function setUser(UserDTO $user){
     VALUES ('$userName', '$userPass')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        //echo "New record created successfully";
+        return true;
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -74,14 +77,25 @@ public function getComment($recipe){
     $conn = $this->openConnection();
     $sql = $conn->prepare("SELECT * FROM comments WHERE Topic = '$recipe'");
     $sql->execute();
-    $comments = $sql->fetchAll();
+   // $comments = $sql->fetchAll();
 
     $entries = null;
+    $result = mysqli_query($conn, $sql);
 
-    foreach ($comments as $comment){
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($comment = mysqli_fetch_assoc($result)) {
+            $entry = new Comment($comment['Username'],$comment['Comment'],$comment['CommentID']);
+            $entries[] = $entry;
+        }
+    } else {
+        //echo "0 results";
+    }
+
+   /* foreach ($comments as $comment){
         $entry = new Comment($comment['Username'],$comment['Comment'],$comment['CommentID']);
         $entries[] = $entry;
-    }
+    }*/
 
     return $entries;
 
@@ -96,7 +110,17 @@ public function addComment(Comment $comment,$recipe){
     $conn = $this->openConnection();
     $sql = "INSERT INTO comments(Username,Comment,Topic)
     VALUES ('$userName', '$message','$recipe')";
-    $conn->exec($sql);
+
+    if (mysqli_query($conn, $sql)) {
+        echo "New record created successfully";
+        return true;
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        return false;
+    }
+
+    mysqli_close($conn);
+    //$conn->exec($sql);
 }
 
 
