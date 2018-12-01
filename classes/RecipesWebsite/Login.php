@@ -34,9 +34,6 @@ class Login extends AbstractRequestHandler{
             $this->session->set(Constants::TASTY_CONTR_KEY,$contr);
             $this->session->set(Constants::TASTY_USERNAME_VAR,$this->username);
             $this->addVariable(Constants::TASTY_USERNAME_VAR,$this->username);
-
-            echo $this->session->get(Constants::TASTY_USERNAME_VAR);
-            echo $this->session->get(Constants::TASTY_ISLOGGEDIN);
             return Constants::TASTY_FRONT_PAGE;
         }
         echo "Only characters and numbers in username!";

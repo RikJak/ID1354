@@ -46,14 +46,14 @@
 			<a class = "day" >	18	</a>
 			<a class = "day" >	19	</a>
 			<a class = "day" >	20	</a>
-			<a class = "day" href="pancakes.php">	21	<div class = "imgContainer"><img src ="../resources/bin/pancakes.png" alt="An image of some pancakes covered in ketchup"></div></a>
+			<a class = "day" href="pancakes">	21	<div class = "imgContainer"><img src ="../resources/bin/pancakes.png" alt="An image of some pancakes covered in ketchup"></div></a>
 			<a class = "day" >	22	</a>
 			<a class = "day" >	23	</a>
 			<a class = "day" >	24	</a>
 			<a class = "day" >	25	</a>
 			<a class = "day" >	26	</a>
 			<a class = "day" >	27	</a>
-			<a class = "day" href="meatballs.php">	28	<div class = "imgContainer"><img src ="../resources/bin/meatballs.png" alt="An image of some tasty looking meatballs"></div></a>
+			<a class = "day" href="meatballs">	28	<div class = "imgContainer"><img src ="../resources/bin/meatballs.png" alt="An image of some tasty looking meatballs"></div></a>
 			<a class = "day" >	29	</a>
 			<a class = "day" >	30	</a>
 		</div>

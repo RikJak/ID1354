@@ -23,6 +23,6 @@ class Logout extends AbstractRequestHandler{
         $this->addVariable(Constants::TASTY_ISLOGGEDIN, false);
         $this->session->set(Constants::TASTY_USERNAME_VAR,false);
         $this->session->set(Constants::TASTY_CONTR_KEY,$contr);
-        return Constants::TASTY_MEATBALL_VIEW;
+        return Constants::TASTY_FRONT_PAGE;
     }
 }

@@ -17,7 +17,7 @@
     </div>
     <div class ="recipe">
         <div class="image">
-            <img src ="<?php echo $xml->recipe[0]->imagepath;?>" alt = "Pancakes covered in ketchup, my favorite!">
+            <img src ="<?php echo $xml->recipe[0]->imagepath;?>" alt = "TASTY MEATBALLS!">
         </div>
 
         <div class ="ingredients">
