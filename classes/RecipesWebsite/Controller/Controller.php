@@ -35,6 +35,7 @@ class Controller{
     public function registerUser($username, $password){
         $this->user = new userVerification();
         $this->user->registerUser($username,$password);
+        return true;
     }
 
     public function postComments(Comment $message){

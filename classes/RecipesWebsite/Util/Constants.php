@@ -10,7 +10,7 @@ class Constants{
     const TASTY_PASSWORD_VAR = 'password';
     const TASTY_ENTRIES_VAR = 'entries';
     const TASTY_LOGINP_VIEW = 'loginP';
-    const TASTY_SIGNUPP_VIEW = 'SignUp';
+    const TASTY_SIGNUPP_VIEW = 'signUp';
     const TASTY_MEATBALL_VIEW = 'meatballs';
     const TASTY_PANCAKES_VIEW = 'pancakes';
     const CHAT_ENTRY_DELIMITER = ';\n';

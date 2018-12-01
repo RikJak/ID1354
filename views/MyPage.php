@@ -12,7 +12,7 @@
 
 <body>
 <?php include 'Menu.php'?>
-<?php if(isset($_SESSION['creationSuccess'])){
+<?php if($creationSuccess){
     echo '<h2>You have succefully created an account, '.$username.'!</h2>';
     unset($_SESSION['creationSuccess']);
 }else{

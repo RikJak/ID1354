@@ -21,12 +21,17 @@ class Login extends AbstractRequestHandler{
     public function setPassword($password){
         $this->password = $password;
     }
+
+    public function setRemember(){
+
+    }
     protected function doExecute()
     {
         $this->session->restart();
         //$this->session->invalidate();
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
-        if($contr->logIn($this->username,$this->password )) {
+        $success = $contr->logIn($this->username,$this->password);
+        if($success) {
 
             $this->session->set(Constants::TASTY_USERNAME_VAR, $contr->getUsername());
             $this->session->set(Constants::TASTY_ISLOGGEDIN, true);
@@ -35,8 +40,10 @@ class Login extends AbstractRequestHandler{
             $this->session->set(Constants::TASTY_USERNAME_VAR,$this->username);
             $this->addVariable(Constants::TASTY_USERNAME_VAR,$this->username);
             return Constants::TASTY_FRONT_PAGE;
+        } else if(!$success) {
+            //echo 'fail';
+            $this->addVariable(invalidLogIn, true);
         }
-        echo "Only characters and numbers in username!";
         return Constants::TASTY_LOGIN_VIEW;
     }
 }

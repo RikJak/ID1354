@@ -17,8 +17,7 @@ class FirstPage extends AbstractRequestHandler
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
         $this->addVariable(Constants::TASTY_USERNAME_VAR, $this->session->get(Constants::TASTY_USERNAME_VAR));
         $this->addVariable(Constants::TASTY_ISLOGGEDIN, $this->session->get(Constants::TASTY_ISLOGGEDIN));
-        echo $this->session->get(Constants::TASTY_USERNAME_VAR);
-        echo $this->session->get(Constants::TASTY_ISLOGGEDIN);
+
 
         return Constants::TASTY_FRONT_PAGE;
     }
