@@ -25,7 +25,6 @@ class Controller{
 
     public function logIn($username, $password){
         if($this->user->verifyUser($username,$password) ){
-            //echo "GREAT SUCCESS!";
             $this->username = $username;
             return true;
         }
@@ -49,9 +48,7 @@ class Controller{
     public function getComments($page){
         return $this->comments->getComments($page);
     }
-    /**
-     * @return mixed
-     */
+
     public function getUsername()
     {
         return $this->username;

@@ -27,7 +27,7 @@ class Signup extends AbstractRequestHandler{
         if(ctype_alnum($this->username) and ctype_print($this->password) and !empty($this->username) and !empty($this->password) ){
             $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
             if($contr->registerUser($this->username, $this->password)){
-                
+
                 $this->session->set(Constants::TASTY_USERNAME_VAR, $contr->getUsername());
                 $this->session->set(Constants::TASTY_ISLOGGEDIN, true);
                 $this->addVariable(Constants::TASTY_ISLOGGEDIN, true);
