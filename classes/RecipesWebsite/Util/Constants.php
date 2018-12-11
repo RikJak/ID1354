@@ -20,7 +20,13 @@ class Constants{
     const TASTY_FRONT_PAGE = 'index';
     const TASTY_LAST_PAGE = 'last';
     const TASTY_MY_PAGE = 'Mypage';
+
+
     public static function getViewFragmentsDir(){
-        return $_SERVER['DOCUMENT_ROOT'] . Classes::getContextPath() . '/resourses/fragments/';
+        return $_SERVER['DOCUMENT_ROOT'] . Classes::getContextPath() . '/resources/fragments/';
+    }
+
+    public static function getJsDir() {
+        return Classes::getContextPath() . 'resources/js/';
     }
 }

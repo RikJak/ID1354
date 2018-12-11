@@ -8,6 +8,9 @@
         <link rel="stylesheet" type="text/css" href = "../resources/css/menu.css">
         <link rel="stylesheet" type="text/css" href = "../resources/css/general.css">
 		<link rel="stylesheet" type="text/css" href = "../resources/css/recipe.css">
+        <?php include RecipesWebsite\Util\Constants::getViewFragmentsDir().'header.php';?>
+        <script type="text/javascript"
+                src="<?php echo RecipesWebsite\Util\Constants::getJsDir()?>comments.js"></script>
 	</head>
 	<body>
     <?php include 'Menu.php';?>

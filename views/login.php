@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" href = "../resources/css/menu.css">
     <link rel="stylesheet" type="text/css" href = "../resources/css/general.css">
     <link rel="stylesheet" type="text/css" href = "../resources/css/login.css">
+    <?php include RecipesWebsite\Util\Constants::getViewFragmentsDir().'header.php';?>
+    <script type="text/javascript"
+            src="<?php echo RecipesWebsite\Util\Constants::getJsDir()?>Login.js"></script>
 </head>
 
 <body>
@@ -17,17 +20,17 @@
 
     <h2>Login Form</h2>
 
-    <form action="Login" method="post">
+    <form data-bind="submit: login" id = 'login'>
         <div class="imgcontainer">
             <img src="../resources/bin/chef.png" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
             <label for="username"><b>Username</b></label>
-            <input type="text" id="username" placeholder="Enter Username" name="username" required>
+            <input type="text" data-bind ="value: username, valueUpdate: 'afterkeydown'" id="username" placeholder="Enter Username" name="username" required>
 
             <label for="password"><b>Password</b></label>
-            <input type="password" id="password" placeholder="Enter Password" name="password" required>
+            <input type="password" data-bind ="value: password, valueUpdate: 'afterkeydown'" id="password" placeholder="Enter Password" name="password" required>
 
             <button type="submit">Login</button>
             <label>

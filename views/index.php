@@ -8,12 +8,13 @@
 		<link rel="stylesheet" type="text/css" href = "../resources/css/menu.css">
 		<link rel="stylesheet" type="text/css" href = "../resources/css/general.css">
 		<link rel="stylesheet" type="text/css" href = "../resources/css/index.css">
+        <?php include RecipesWebsite\Util\Constants::getViewFragmentsDir().'header.php';?>
 	</head>
 
 	<body>
        <?php include 'Menu.php';?>
 		<div class = "container">
-
+            <script>console.log('logga');</script>
 			<div id = "promo">
 				<h1>Click the button to find a calendar containing delicious recipes!</h1>
 

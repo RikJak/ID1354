@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href = "../resources/css/menu.css">
     <link rel="stylesheet" type="text/css" href = "../resources/css/general.css">
     <link rel="stylesheet" type="text/css" href = "../resources/css/logOut.css">
+    <?php include RecipesWebsite\Util\Constants::getViewFragmentsDir().'header.php';?>
 </head>
 
 <body>
