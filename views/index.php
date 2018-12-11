@@ -14,14 +14,14 @@
 	<body>
        <?php include 'Menu.php';?>
 		<div class = "container">
-            <script>console.log('logga');</script>
+
 			<div id = "promo">
 				<h1>Click the button to find a calendar containing delicious recipes!</h1>
 
 
 			</div>
 			<div id = "calendarButton">
-				<button class="button" onclick="location.href='calendar.php'" >Go to calendar</button>
+				<button class="button" onclick="location.href='calendar'" >Go to calendar</button>
 			</div>
 			<div id = "delicious">
 			</div>

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var baseUrl = location.href.replace("Login", "");
-    var loginUrl = baseUrl + "Login";
+    var loginUrl = baseUrl + "LoginUser";
     var writeUrl = baseUrl + "StoreEntry";
     var readUrl = baseUrl + "GetEntries";
     var deleteUrl = baseUrl + "DeleteEntry";
@@ -24,7 +24,7 @@ $(document).ready(function () {
                         'password': p,
                         'username': u,
                     },
-                        function (a,b,c) {test(a,b,c);}
+                        function (a,b) {test(a,b);}
 
                     );
             }else{
@@ -32,6 +32,7 @@ $(document).ready(function () {
                 alert("Wrong username or password")
 
             }
+           // location.reload();
         };
        /* var password = $('#password').val();
         var username = $('#username').val();*/
@@ -39,10 +40,16 @@ $(document).ready(function () {
        //console.log(password);
 
 
-    function test(a,b,c){
-        s = a+" THIS IS A TEST " + b + " IS THIS TOO? "+ c;
-        console.log(s);
-    }
+        function test(a,b) {
+            console.log('3245345' +a);
+            if (a.charAt(0)==1) {
+                document.location.href = 'MyPage';
+            }else{
+                alert('Wrong username or password');
+
+            }
+        }
+
     };
 
 var log = new LoginFunct();
