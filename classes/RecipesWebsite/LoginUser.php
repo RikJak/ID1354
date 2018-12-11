@@ -43,6 +43,6 @@ class LoginUser extends AbstractRequestHandler{
             echo false;
             $this->addVariable(invalidLogIn, true);
         }
-       // return Constants::TASTY_LOGIN_VIEW;
+
     }
 }

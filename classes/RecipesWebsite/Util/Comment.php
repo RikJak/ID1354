@@ -6,12 +6,12 @@
  * Time: 16:23
  */
 namespace RecipesWebsite\Util;
-class Comment{
-    private $username;
-    private $message;
-    private $commentID;
-    private $deleted;
-    private $recipeID;
+class Comment {
+    protected $username;
+    protected $message;
+    protected $commentID;
+    protected $deleted;
+    protected $recipeID;
     public function __construct($username,$message,$commentID,$recipeID){
         $this->username = $username;
         $this->message = $message;
@@ -45,5 +45,14 @@ class Comment{
     public function getRecipeID()
     {
         return $this->recipeID;
+    }
+
+    public function jsonSerialize() {
+        return [
+            'username' => $this->username,
+            'message'=>$this->message,
+            'commentID'=>$this->commentID,
+            'recipeID'=>$this->recipeID
+        ];
     }
 }
