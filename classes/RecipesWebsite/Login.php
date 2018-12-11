@@ -27,6 +27,11 @@ class Login extends AbstractRequestHandler{
     }
     protected function doExecute()
     {
+
+        $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
+        $this->session->set(Constants::TASTY_LAST_PAGE,Constants::TASTY_LOGIN_VIEW);
+        $this->addVariable(Constants::TASTY_USERNAME_VAR, $this->session->get(Constants::TASTY_USERNAME_VAR));
+        $this->addVariable(Constants::TASTY_ISLOGGEDIN, $this->session->get(Constants::TASTY_ISLOGGEDIN));
       /*  $this->session->restart();
         //$this->session->invalidate();
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);

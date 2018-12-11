@@ -9,21 +9,19 @@
     <link rel="stylesheet" type="text/css" href = "../resources/css/general.css">
     <link rel="stylesheet" type="text/css" href = "../resources/css/logOut.css">
     <?php include RecipesWebsite\Util\Constants::getViewFragmentsDir().'header.php';?>
+    <script type="text/javascript" src="<?php echo RecipesWebsite\Util\Constants::getJsDir()?>Logout.js"></script>
 </head>
 
 <body>
 <?php include 'Menu.php'?>
-<?php if($creationSuccess){
-    echo '<h2>You have succefully created an account, '.$username.'!</h2>';
-    unset($_SESSION['creationSuccess']);
-}else{
-    echo '<h2>Welcome back '.$username.'!</h2>
+
+
+<h2 id = "welcome">Welcome back '.$username.'!</h2>
 <div class="container">
     <div id = "LogOutButton">
-        <button class="button" onclick='.'"location.href=\'Logout\'"'.'>Log out!</button>
+        <button id="logout" class="button"  data-bind="click: logout">Log out!</button>
     </div>
-</div>';
-}?>
+</div>
 
 
 </body>

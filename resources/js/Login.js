@@ -24,25 +24,22 @@ $(document).ready(function () {
                         'password': p,
                         'username': u,
                     },
-                        function (a,b) {test(a,b);}
+                        function (result,b) {performLogin(result,b);}
 
                     );
             }else{
-                console.log('Failure');
-                alert("Wrong username or password")
+                alert("Usernames and passwords can only contain numbers and letters!")
+                self.password("");
+                self.username("");
 
             }
-           // location.reload();
+
         };
-       /* var password = $('#password').val();
-        var username = $('#username').val();*/
-     //   console.log('Hej');
-       //console.log(password);
 
 
-        function test(a,b) {
-            console.log('3245345' +a);
-            if (a.charAt(0)==1) {
+        function performLogin(result,b) {
+            console.log('TEst:' +result+"  "+b);
+            if (result) {
                 document.location.href = 'MyPage';
             }else{
                 alert('Wrong username or password');

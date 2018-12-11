@@ -20,6 +20,8 @@ class Constants{
     const TASTY_FRONT_PAGE = 'index';
     const TASTY_LAST_PAGE = 'last';
     const TASTY_MY_PAGE = 'Mypage';
+    const TASTY_JSON_DATA_VAR = 'jsonData';
+    const TASTY_JSON_VIEW = 'json-view';
 
 
     public static function getViewFragmentsDir(){
