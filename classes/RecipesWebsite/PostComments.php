@@ -21,7 +21,7 @@ class PostComments extends AbstractRequestHandler
     public function setRecipeID ($ID){
         $this->RecipeID = $ID;
     }
-    public function setcomment($comment){
+    public function setComment($comment){
         $this->comment = $comment;
     }
 
@@ -32,9 +32,9 @@ class PostComments extends AbstractRequestHandler
         $message = new Comment($this->session->get(Constants::TASTY_USERNAME_VAR),$this->comment,$this->ID,$this->RecipeID);
         $contr->postComments($message);
         $this->session->set(Constants::TASTY_MEATBALL_VIEW.'comments',$contr->getComments(Constants::TASTY_LAST_PAGE));
-        $this->addVariable(Constants::TASTY_ENTRIES_VAR,$contr->getComments($this->session->get(Constants::TASTY_LAST_PAGE)));
+        /*$this->addVariable(Constants::TASTY_ENTRIES_VAR,$contr->getComments($this->session->get(Constants::TASTY_LAST_PAGE)));
         $this->addVariable(Constants::TASTY_USERNAME_VAR,$this->session->get(Constants::TASTY_USERNAME_VAR));
         $this->addVariable(Constants::TASTY_ISLOGGEDIN, $this->session->get(Constants::TASTY_ISLOGGEDIN));
-        return $this->session->get(Constants::TASTY_LAST_PAGE);
+        //return $this->session->get(Constants::TASTY_LAST_PAGE);*/
     }
 }

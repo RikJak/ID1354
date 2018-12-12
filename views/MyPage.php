@@ -16,7 +16,7 @@
 <?php include 'Menu.php'?>
 
 
-<h2 id = "welcome">Welcome back '.$username.'!</h2>
+<h2 id = "welcome">Welcome back!</h2>
 <div class="container">
     <div id = "LogOutButton">
         <button id="logout" class="button"  data-bind="click: logout">Log out!</button>

@@ -2,9 +2,6 @@ $(document).ready(function () {
 
     var baseUrl = location.href.replace("Login", "");
     var loginUrl = baseUrl + "LoginUser";
-    var writeUrl = baseUrl + "StoreEntry";
-    var readUrl = baseUrl + "GetEntries";
-    var deleteUrl = baseUrl + "DeleteEntry";
 
     function LoginFunct(){
         var self = this;

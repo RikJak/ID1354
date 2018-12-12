@@ -12,7 +12,9 @@ use RecipesWebsite\Controller\Controller;
 
 
 class pancakes extends AbstractRequestHandler {
+    function setCommentID($CommentID){
 
+    }
     protected function doExecute() {
 
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
