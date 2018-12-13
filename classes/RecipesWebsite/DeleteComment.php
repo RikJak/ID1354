@@ -28,6 +28,6 @@ class DeleteComment extends AbstractRequestHandler
         $this->addVariable(Constants::TASTY_ENTRIES_VAR,$this->session->get(Constants::TASTY_LAST_PAGE.'comments'));
         $this->addVariable(Constants::TASTY_USERNAME_VAR,$this->session->get(Constants::TASTY_USERNAME_VAR));
         $this->addVariable(Constants::TASTY_ISLOGGEDIN, $this->session->get(Constants::TASTY_ISLOGGEDIN));
-        return $this->session->get(Constants::TASTY_LAST_PAGE);
+        //return $this->session->get(Constants::TASTY_LAST_PAGE);
     }
 }

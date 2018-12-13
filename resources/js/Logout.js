@@ -11,7 +11,6 @@ $(document).ready(function () {
             $.post(logoutUrl,function(res){
                 console.log(res);
                document.location.href = 'index';
-
             })
         }
     };

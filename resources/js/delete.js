@@ -6,7 +6,8 @@ function deleteMessage(form){
     var deleteUrl = baseUrl + "DeleteComment";
 
 
-    $.post(deleteUrl,{'CommentID':form}, function () {
+    $.post(deleteUrl,{'CommentID':form}, function (response) {
+    console.log('Delete:'+ response);
         location.reload();
     });
 }

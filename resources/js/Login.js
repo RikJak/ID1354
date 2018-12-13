@@ -35,7 +35,7 @@ $(document).ready(function () {
 
 
         function performLogin(result,b) {
-            console.log('TEst:' +result+"  "+b);
+            console.log('Login' +result+"  "+b);
             if (result) {
                 document.location.href = 'MyPage';
             }else{

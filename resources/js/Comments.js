@@ -21,7 +21,7 @@ $(document).ready(function () {
             'recipe': recipe
         }
         ,function (comments) {
-
+            console.log(comments);
             setComments(comments);
         });
     }
@@ -51,6 +51,7 @@ $(document).ready(function () {
 
     function getUser() {
         $.post(userNameUrl, function (name) {
+            console.log(name);
             user = removeQuotes(name);
 
         });
@@ -81,7 +82,8 @@ $(document).ready(function () {
                 'RecipeID': i,
                 'Comment': m
             },
-                function () {
+                function (response) {
+                    console.log('Submit:    ' + response);
                     location.reload();
                 })
         }
